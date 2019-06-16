@@ -504,17 +504,7 @@ def cache_bottlenecks(sess, image_lists, image_dir, bottleneck_dir,
             tf.logging.info(
                 str(how_many_bottlenecks) + ' bottleneck files created.')
         except Exception as e:
-            tf.logging.info('tidak terbuat ')
-
-  try:
-    bottleneck_values = run_bottleneck_on_image(
-        sess, image_data, jpeg_data_tensor, decoded_image_tensor,
-        resized_input_tensor, bottleneck_tensor)
-    bottleneck_string = ','.join(str(x) for x in bottleneck_values)
-    with open(bottleneck_path, 'w') as bottleneck_file:
-        bottleneck_file.write(bottleneck_string)
-  except Exception as e:
-    tf.logging.info('tidak pakai ' + image_path)              
+            tf.logging.info('tidak terbuat ')           
 
 
 def get_random_cached_bottlenecks(sess, image_lists, how_many, category,
