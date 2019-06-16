@@ -493,6 +493,7 @@ def cache_bottlenecks(sess, image_lists, image_dir, bottleneck_dir,
     for category in ['training', 'testing', 'validation']:
       category_list = label_lists[category]
       for index, unused_base_name in enumerate(category_list):
+
         try:
             get_or_create_bottleneck(
                 sess, image_lists, label_name, index, image_dir, category,
@@ -501,10 +502,12 @@ def cache_bottlenecks(sess, image_lists, image_dir, bottleneck_dir,
 
             how_many_bottlenecks += 1
             if how_many_bottlenecks % 100 == 0:
-            tf.logging.info(
-                str(how_many_bottlenecks) + ' bottleneck files created.')
+                tf.logging.info(
+                    str(how_many_bottlenecks) + ' bottleneck files created.')
         except Exception as e:
-            tf.logging.info('tidak terbuat ')           
+            tf.logging.info('tidak terbuat ')  
+
+               
 
 
 def get_random_cached_bottlenecks(sess, image_lists, how_many, category,
