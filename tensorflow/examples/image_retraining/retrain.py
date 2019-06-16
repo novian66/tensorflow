@@ -392,10 +392,9 @@ def create_bottleneck_file(bottleneck_path, image_lists, label_name, index,
     bottleneck_values = run_bottleneck_on_image(
         sess, image_data, jpeg_data_tensor, decoded_image_tensor,
         resized_input_tensor, bottleneck_tensor)
-        bottleneck_string = ','.join(str(x) for x in bottleneck_values)
-        with open(bottleneck_path, 'w') as bottleneck_file:
-            bottleneck_file.write(bottleneck_string)
-            
+    bottleneck_string = ','.join(str(x) for x in bottleneck_values)
+    with open(bottleneck_path, 'w') as bottleneck_file:
+        bottleneck_file.write(bottleneck_string)
   except Exception as e:
     tf.logging.info('tidak pakai ' + image_path)
 
