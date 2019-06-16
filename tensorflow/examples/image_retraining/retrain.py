@@ -398,10 +398,6 @@ def create_bottleneck_file(bottleneck_path, image_lists, label_name, index,
   except Exception as e:
     tf.logging.info('tidak pakai ' + image_path)
 
-  
-  with open(bottleneck_path, 'w') as bottleneck_file:
-    bottleneck_file.write(bottleneck_string)
-
 
 def get_or_create_bottleneck(sess, image_lists, label_name, index, image_dir,
                              category, bottleneck_dir, jpeg_data_tensor,
